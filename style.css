@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto+Mono&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  background-color: #ebebeb;
+}
+
+body {
+  margin: 0;
+  color: black;
+}
+
+nav {
+  display: flex;
+  width: 60%;
+  margin: auto;
+  padding: 24px;
+  justify-content: space-between;
+  font-family: 'Roboto Mono', monospace;
+}
+
+nav a {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover {
+  color: #ff6700;
+}
