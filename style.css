@@ -2,12 +2,13 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
 }
 
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
-  background-color: #ebebeb;
+  background-color: #fff;
 }
 
 body {
@@ -21,15 +22,55 @@ nav {
   margin: auto;
   padding: 24px;
   justify-content: space-between;
-  font-family: 'Roboto Mono', monospace;
 }
 
 nav a {
   text-align: center;
   text-decoration: none;
   color: black;
+  font-weight: bold;
 }
 
 nav a:hover {
   color: #ff6700;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+.container-main {
+  display: flex;
+}
+
+.container-main .main-article {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 30px;
+}
+.container-main .main-article img {
+  margin-bottom: 30px;
+}
+
+.container-main .article-list{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.container-main .article-list .card {
+  display: flex;
+  padding: 20px;
+  line-height: 1.25;
+}
+
+.card:hover {
+  text-decoration: underline;
+  transition: 0.5s ease;
+}
+
+.container-main .article-list .card img{
+  height: 20vh;
+  width: auto;
 }
