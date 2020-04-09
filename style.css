@@ -97,6 +97,7 @@ h1 {
 }
 
 .container-about img {
+  height: 20vw;
   margin-bottom: 30px;
 }
 .container-contact{
@@ -112,4 +113,41 @@ h1 {
 
 .container-contact a:hover {
   opacity: 0.8;
+}
+
+.container-archive{
+  justify-content: center;
+  text-align: center;
+}
+
+.container-archive button {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.container-archive button:hover {
+  color: #ff6700;
+}
+
+#month-articles {
+  display: none;
+}
+
+.container-archive a{
+  text-decoration: none;
+  color: black;
+}
+
+.container-archive a:hover{
+  color: #ff6700;
+  text-decoration: underline;
+}
+
+.container-category {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
