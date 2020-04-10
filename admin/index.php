@@ -12,9 +12,9 @@ require("../connect.php");
   <body>
     <div id = "login" title = "Login">
         <form method="POST" action="check.php">
-    			<label>USER ID</label><br>
+    			<label>USER ID:</label><br>
            <input type=text name="userID" required></input><br>
-    			 <label>PASSWORD</label>
+    			 <label>PASSWORD:</label>
            <input type=text name="pass" required></input><br>
            <button>LOGIN</button>
         </form>
