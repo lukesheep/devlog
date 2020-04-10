@@ -22,30 +22,30 @@
   </head>
   <body>
     <?php
-     if(empty($result)){
-       echo("
-
-         <table>
-         <tr><td colspan='2'>Article list</td><tr>
-         <tr>
-         <td>id&nbsp;&nbsp;&nbsp;&nbsp;</td>
-         <td>title</td>
-         </tr>");
-         foreach ($result as $r) {
-           echo("
-           <tr>
-           <td><a class='ajax' href='ajax.php?id=".$r["id"]."'>".$r['id']."</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-           <td>".$r['title']."</td>
-           </tr>");
-         }
-     echo("</table>
-         ");
-
+     if (empty($result)){
+                  echo("no results found");
      ?>
      <p id="target"></p>
 
     <?php	}else{
-           echo("no results found");
+
+           echo("
+
+             <table>
+             <tr><td colspan='2'>Article list</td><tr>
+             <tr>
+             <td>id&nbsp;&nbsp;&nbsp;&nbsp;</td>
+             <td>title</td>
+             </tr>");
+             foreach ($result as $r) {
+               echo("
+               <tr>
+               <td><a class='ajax' href='ajax.php?id=".$r["id"]."'>".$r['id']."</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+               <td>".$r['title']."</td>
+               </tr>");
+             }
+         echo("</table>
+             ");
          }
       ?>
     </body>

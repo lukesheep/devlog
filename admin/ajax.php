@@ -12,6 +12,6 @@ session_start();
   echo "&nbsp;&nbsp;&nbsp;&nbsp;";
   echo $s["body"];
   echo "<br><tr>
-<td><a href='read.php?id=".$s["id"]."'>View in full</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a href='article.php?id=".$s["id"]."'>View in full</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>";
 ?>
