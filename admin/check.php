@@ -24,14 +24,14 @@ require("../connect.php"); /*Connecting to the database*/
        $_SESSION["pass"]=$login["password"];
        $_SESSION["name"]=$login["name"];
        $_SESSION["logged"]="sim";
-       header('Location:article.php ');
+       header('Location:list.php ');
        $false = false;
     }
     }
     if($false){
-     header('Location:article.php');
+     header('Location:index.php');
     }
-
+$conn -> close();
 ?>
   </body>
 </html>

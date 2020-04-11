@@ -1,49 +1,39 @@
 <?php
-  session_start();
-  if(isset($_SESSION["logged"])){
+session_start();
+require "../connect.php";
+if(isset($_SESSION["logged"])){}else{
+	header('Location:/index.php ');
+}
 
-  }else{
-    header('Location:index.php ');
-  }
-  require("../connect.php");
-  $result = $conn->prepare(
-    "SELECT * from post where id=:id"
+if(isset($_POST['id'])) {
+	$update = $conn->prepare(
+		"UPDATE post set title=:title, body=:body where ID=:id"
 	);
-	$result->bindParam(':id',$_GET["id"]);
-	$result -> execute();
-	$r = $result->fetch();
+  $update_text = trim($_POST['body']);
+	$update->bindParam(":id",$_POST['id']);
+	$update->bindParam(":body",$update_text);
+	$update->bindParam(":title",$_POST['title']);
+	$update->execute();
+}
+
+if(isset($_GET['id'])) {
+	$result = $conn->prepare(
+		"SELECT * FROM post where id=:id"
+	);
+	$result->bindParam(":id",$_GET['id']);
+	$result->execute();
+  $r = $result->fetch();
+}
 ?>
-<!DOCTYPE html>
-<html lang="jp" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" media="(orientation: landscape)" type="text/css" href='admin.css'>
-    <!-- <link rel="stylesheet" media="(orientation: portrait)" href="main_mobile.css"> -->
-    <link href = "jquery/jquery-ui.css"  rel = "stylesheet">
-   <script src = "jquery/jquery-3.3.1.min.js"></script>
-   <script src = "jquery/jquery-ui.min.js"></script>
 
-    <title>DevLog</title>
-  </head>
-  <body>
-    <div class="side">
-
-           <?php echo $r["title"]; ?><br>
-
-    				 <a href="delete.php?id=<?php echo $r['id']; ?> ">DELETE</a> <br>
-    				 <a href="update.php?id=<?php echo $r['id']; ?>&subject=<?php echo $r['title']; ?>&body=<?php echo $r['body']; ?>">UPDATE</a>
-         </div>
-    			 <?php
-
-    			 if(isset($_GET[ 'id'])) {
-    			 	if($r["id"]!=null){
-    					echo "&nbsp;&nbsp;&nbsp;&nbsp;";
-    		 			echo $r["body"];
-    					echo "<br><span class='footnote'> By&nbsp;";
-    					echo $r["date"];
-    					echo "</span><br><br>";
-    				}else{
-    			 		echo("no results found");
-    			 	} }?>
-  </body>
-</html>
+<?php if(isset($_POST["id"])){?>
+	 			Your article was edited.
+	 		<?php }?>
+	 	<form method="POST" action=<?php echo "article.php?id=".$r["id"] ?>>
+	 	<input type=hidden name="id" value=<?php echo $r["id"]?>></input>
+	 	Title</br>
+	 	<input type=text name="title" value=<?php echo "'".$r["title"]."'"?>></input></br>
+	 	Body</br>
+	 	<textarea name="body" rows="30" cols="60"> <?php echo $r["body"]?></textarea></br>
+	 	<button>update</button></form>
+    <a href="list.php">Back to list</a>
