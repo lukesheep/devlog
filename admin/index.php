@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+require "../connect.php";
+if(isset($_SESSION["logged"])){
+  header('Location:/list.php ');
+}
+?>
 <!DOCTYPE html>
 <html lang="jp" dir="ltr">
   <head>
@@ -9,7 +15,7 @@
   </head>
   <body>
     <div id = "login" title = "Login">
-        <form method="POST" action="check.php">
+        <form method="POST" action="check.php" >
     			<label>USER ID:</label><br>
            <input type=text name="userID" required></input><br>
     			 <label>PASSWORD:</label>

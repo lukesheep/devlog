@@ -29,11 +29,11 @@ if(isset($_GET['id'])) {
 <?php if(isset($_POST["id"])){?>
 	 			Your article was edited.
 	 		<?php }?>
-	 	<form method="POST" action=<?php echo "article.php?id=".$r["id"] ?>>
+	 	<form method="POST" action=<?php echo "article.php?id=".$r["id"] ?> onsubmit="return confirm('Are you sure you want to do this?');">
 	 	<input type=hidden name="id" value=<?php echo $r["id"]?>></input>
 	 	Title</br>
 	 	<input type=text name="title" value=<?php echo "'".$r["title"]."'"?>></input></br>
 	 	Body</br>
 	 	<textarea name="body" rows="30" cols="60"> <?php echo $r["body"]?></textarea></br>
-	 	<button>update</button></form>
+	 	<button>update</button><button formaction="delete.php">delete</button></form>
     <a href="list.php">Back to list</a>
