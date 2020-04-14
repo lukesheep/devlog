@@ -51,8 +51,15 @@ h1 {
   color: #ff6700;
 }
 
+.container-main .main-article a{
+  text-decoration: none;
+}
+
 .container-main .main-article h2{
   color: black;
+}
+.container-main .main-article h2:hover{
+  color: #ff6700;
 }
 .container-main .main-article img {
   margin-bottom: 30px;
@@ -150,4 +157,12 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.article-container {
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
 }

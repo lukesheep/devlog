@@ -8,6 +8,7 @@ $search->execute();
 $r;
 $index = 0;
 foreach ($search as $res) {
+  $r[$index]["link"] = "'article.php?id=".$res["id"]."'";
   $r[$index]["image"] = $res["image"];
   $r[$index]["category"] = $res["category"];
   $r[$index]["thumb"] = $res["thumb"];
@@ -35,16 +36,17 @@ foreach ($search as $res) {
       <a href="contact.html">Contact <br> 連絡</a>
     </nav>
     <div class="container-main">
+
       <div class="main-article">
         <img src= <?php echo($r[0]["image"]) ?> alt="">
         <?php echo($r[0]["category"]) ?> <br>
-        <h2><?php echo($r[0]["title"]) ?></h2>
+        <a href=<?php echo $r[0]["link"]?>><h2><?php echo($r[0]["title"]) ?></h2></a>
 
       </div>
 
       <div class="article-list">
         <h2>Recent Stories</h2>
-        <a href="article.html">
+        <a href=<?php echo $r[1]["link"]?>>
         <section class="card">
           <img src=<?php echo($r[1]["thumb"]) ?> alt="">
           <span class="card-text">
@@ -53,7 +55,7 @@ foreach ($search as $res) {
            <h6>Published in <?php echo($r[1]["month"]) ?> <?php echo($r[1]["year"]) ?></h6>
           </span>
         </section></a>
-        <a href="article.html">
+        <a href=<?php echo $r[2]["link"]?>>
         <section class="card">
           <img src=<?php echo($r[2]["thumb"]) ?> alt="">
           <span class="card-text">
@@ -62,7 +64,7 @@ foreach ($search as $res) {
            <h6>Published in <?php echo($r[2]["month"]) ?> <?php echo($r[2]["year"]) ?></h6>
           </span>
         </section></a>
-        <a href="article.html">
+        <a href=<?php echo $r[3]["link"]?>>
         <section class="card">
           <img src=<?php echo($r[3]["thumb"]) ?> alt="">
           <span class="card-text">

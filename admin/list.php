@@ -2,7 +2,7 @@
 session_start();
 require "../connect.php";
 if(isset($_SESSION["logged"])){}else{
-	header('Location:/index.php ');
+	header('Location:/devlog/admin/index.php ');
 }
 
 if(isset($_SESSION["deleted"]) and $_SESSION["deleted"] == "yes"){
