@@ -159,6 +159,23 @@ h1 {
   text-align: center;
 }
 
+.container-category a{
+  text-decoration: none;
+  margin-right: 12px;
+  margin-bottom: 8px;
+  color: black;
+}
+
+.container-category a:hover{
+  text-decoration: underline;
+  color:#ff6700;
+}
+
+.container-category .cat-nav{
+  padding: 16px;
+  font-size: 32px;
+}
+
 .article-container {
   margin: auto;
   justify-content: center;
