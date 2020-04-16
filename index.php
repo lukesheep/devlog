@@ -31,7 +31,7 @@ foreach ($search as $res) {
     <nav>
       <a href="index.php">Sheep <br> DevLog </a>
       <a href="category.php">Categories <br> カテゴリー </a>
-      <a href="archives.html">Archives <br> 記事月別 </a>
+      <a href="archives.php">Archives <br> 記事月別 </a>
       <a href="about.html">About <br> 自己紹介 </a>
       <a href="contact.html">Contact <br> 連絡</a>
     </nav>
